@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <button onclick="postData()">Post data</button>
+        <button onclick="getData()">Get data</button>
+        <script>
+            async function postData() {
+                const response = await fetch('/',{
+                    method: 'POST',
+                    headers:{
+                        'Content-Type' : 'application/json'
+                    },
+                    body: JSON.stringfy({
+
+                    })
+                });
+                
+                const data = await response.json();
+                console.log(data);
+            }
+            async function getData(){
+                const response = await fetch('/');
+                const data = await response.json();
+                console.log(data);
+            }
+        </script>
+    </body>
+</html>
